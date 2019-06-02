@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {HashRouter, Route, Link, NavLink} from 'react-router-dom';
+import React from 'react';
+import {NavLink} from 'react-router-dom';
 
 
 const Nav = () => {
