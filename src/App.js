@@ -25,11 +25,12 @@ class App extends Component {
         }
       }
 
-      deletePerson(name) {
-        this.setState({people: this.state.people.filter((person)=> person.name !== name)}) ;
-      }
+    deletePerson(name) {
+    this.setState({people: this.state.people.filter((person)=> person.name !== name)}) ;
+    }
 
-      addPerson(name) {
+    addPerson(ev, name) {
+        ev.preventDefault();
         console.log(name)
         const people = [...this.state.people, {'name': name}]
         this.setState({people})

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const People = ({people, deletePersons}) => {
+const People = ({people, deletePerson}) => {
     return ( 
         <div id='people' style={{display: 'flex', justifyContent: 'center'}}>
                     <ul>
