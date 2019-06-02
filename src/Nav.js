@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import {HashRouter, Route, Link} from 'react-router-dom';
-
+import {HashRouter, Route, Link, NavLink} from 'react-router-dom';
 
 
 const Nav = () => {
     return ( 
-        <HashRouter>
             <ul style={{display: 'flex', justifyContent: 'space-around', listStyle: 'none'}}>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/people'>People</Link></li>
-                <li><Link to='/people/create'>Create a Person</Link></li>
+                <li><NavLink exact activeClassName='is-active' to='/'>Home</NavLink></li>
+                <li><NavLink exact activeClassName='is-active' to='/people'>People</NavLink></li>
+                <li><NavLink exact activeClassName='is-active' to='/people/create'>Create a Person</NavLink></li>
             </ul>
-        </HashRouter> 
      );
 }
  

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {HashRouter, Route} from 'react-router-dom';
-import AddPerson from './AddPerson';
+import AddPerson from './addPerson';
 
 class People extends Component {
     constructor(props) {
@@ -35,24 +34,18 @@ class People extends Component {
         const { deletePerson, addPerson } = this;
 
         return ( 
-            <HashRouter>
-            <div id='people' style={{display: 'flex', justifyContent: 'center'}}>
-                <ul>
-                    {people.map((person, id) => 
-                        <div  key={id} style={{display: 'flex'}}>
-                            <li>{person.name}</li>
-                            <button onClick={()=>deletePerson(person.name)} style={{marginLeft: '1em'}}>X</button>
-                        </div>
-                    )}
-                </ul>
-                
-            </div>
-            <Route path='/people/create' component={AddPerson}/>
-            </HashRouter>
+                <div id='people' style={{display: 'flex', justifyContent: 'center'}}>
+                    <ul>
+                        {people.map((person, id) => 
+                            <div  key={id} style={{display: 'flex'}}>
+                                <li>{person.name}</li>
+                                <button onClick={()=>deletePerson(person.name)} style={{marginLeft: '1em'}}>X</button>
+                            </div>
+                        )}
+                    </ul>
+                </div>
             );
     }
 }
  
 export default People;
-
-//render={() => <hr />}
