@@ -16,6 +16,7 @@ class App extends Component {
     }
 
     async componentDidMount() {
+      // Great Try/Catch!
         try {
           const response = await axios.get('https://profs-star-wars.herokuapp.com/people');
           this.setState({ people: response.data });
@@ -26,16 +27,23 @@ class App extends Component {
       }
 
     deletePerson(name) {
+      /* Only reference `this.state` either outside of setState or inside a callback within setState.  i.e.:
+      const people = this.state.people.filter((person)=> person.name !== name)
+      this.setState({ people });
+      */
     this.setState({people: this.state.people.filter((person)=> person.name !== name)});
     }
 
     addPerson(ev, name) {
         ev.preventDefault();
+        // Nice!  This is how state should be changed.  The deletePerson should be done this same way.
         const people = [...this.state.people, {'name': name}];
         this.setState({people});
     }
 
     render() { 
+        // Good destructuring. 
+        // Indentation could be one to the left here?
         const { people } = this.state;
         const { deletePerson, addPerson } = this;
         return (
